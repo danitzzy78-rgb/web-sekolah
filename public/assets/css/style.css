@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topbar {
+    background-color: #00cc3d;
+    color: white;
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar p {
+    margin: 0;
+}
+
+.topbar span {
+    font-weight: bold;
+}
+
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-style: normal;
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px; 
+    font-weight: 500;
+}
+
+
+.contact-info .fa-envelope,
+.contact-info .fa-phone {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+
+.sosial-media {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sosial-media a {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+/* Facebook */
+.sosial-media a:nth-child(1) {
+    background: #1877F2;
+    color: #fff;
+}
+
+/* Instagram */
+.sosial-media a:nth-child(2) {
+    background: linear-gradient(45deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888);
+    color: #fff;
+}
+
+/* YouTube */
+.sosial-media a:nth-child(3) {
+    background: #000;
+    color: #fff;
+}
+
+/* TikTok */
+.sosial-media a:nth-child(4) {
+    background: #FF0000;
+    color: #fff;
+}
+
+.sosial-media a:hover {
+    transform: scale(1.1);
+}
