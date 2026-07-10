@@ -1,104 +1,350 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.topbar {
-    background-color: #00cc3d;
-    color: white;
-    padding: 10px 0;
+:root {
+  --hijau: #0f6b3c;
+  --hijau-tua: #0a4527;
+  --hijau-pucat: #eaf1ec;
+  --emas: #c9971f;
+  --emas-terang: #e8b93a;
+  --tinta: #212b25;
+  --abu-teks: #5c655f;
+  --garis: #dde3de;
+  --kertas: #f4f6f2;
+  --radius: 4px;
+  --radius-lg: 6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", "Arial", sans-serif;
+  background: var(--kertas);
+  color: var(--tinta);
+  line-height: 1.55;
+}
+
+h1, h2, h3, .logo-text h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .container {
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 96%;
+  max-width: 1600px;
+  margin: auto;
 }
 
-.topbar p {
-    margin: 0;
+
+/* bagian topbar */
+.topbar {
+  background: var(--hijau-tua);
+  color: white;
+  padding: 7px 0;
+  font-size: 12.5px;
 }
 
-.topbar span {
-    font-weight: bold;
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
+.topbar p span { font-weight: 700; color: var(--emas-terang); }
 
 .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-style: normal;
 }
 
 .contact-info a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: white;
-    font-size: 12px; 
-    font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-size: 12.5px;
+  opacity: 0.9;
+  transition: 0.2s;
 }
 
+.contact-info a:hover { color: var(--emas-terang); opacity: 1; }
 
-.contact-info .fa-envelope,
-.contact-info .fa-phone {
-    font-size: 11px;
-    color: #ffffff;
-}
-
-
-.sosial-media {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+.sosial-media { display: flex; gap: 8px; }
 
 .sosial-media a {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 12px;
-    transition: 0.3s;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  transition: transform 0.2s ease;
 }
 
-/* Facebook */
-.sosial-media a:nth-child(1) {
-    background: #1877F2;
-    color: #fff;
+.sosial-media a:hover { transform: translateY(-2px); }
+
+.sosial-media a:nth-child(1) { background: #1877f2; }
+.sosial-media a:nth-child(2) { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.sosial-media a:nth-child(3) { background: #000; }
+.sosial-media a:nth-child(4) { background: #ff0000; }
+
+/* bagian heaader */
+
+.header {
+  background: white;
+  padding: 20px 0;
+  border-bottom: 3px solid var(--hijau);
 }
 
-/* Instagram */
-.sosial-media a:nth-child(2) {
-    background: linear-gradient(45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888);
-    color: #fff;
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* YouTube */
-.sosial-media a:nth-child(3) {
-    background: #000;
-    color: #fff;
+.logo { display: flex; align-items: center; gap: 15px; }
+.logo img { width: 64px; height: 64px; object-fit: contain; }
+
+.logo-text h1 { font-size: 25px; color: var(--tinta); }
+.logo-text h1 span { color: var(--hijau); }
+
+.logo-text p {
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: var(--abu-teks);
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
 }
 
-/* TikTok */
-.sosial-media a:nth-child(4) {
-    background: #FF0000;
-    color: #fff;
+.search-box { display: flex; }
+
+.search-box input {
+  width: 250px;
+  height: 40px;
+  border: 1.5px solid var(--garis);
+  border-right: none;
+  padding: 0 14px;
+  border-radius: var(--radius) 0 0 var(--radius);
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--kertas);
 }
 
-.sosial-media a:hover {
-    transform: scale(1.1);
+.search-box input:focus { border-color: var(--hijau); }
+
+.search-box button {
+  width: 44px;
+  border: none;
+  background: var(--hijau);
+  color: white;
+  cursor: pointer;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  transition: background 0.2s;
+}
+
+.search-box button:hover { background: var(--hijau-tua); }
+
+/* bagian navbar */
+
+.navbar {
+  background: var(--hijau);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container { display: flex; justify-content: center; align-items: center; }
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-menu li { position: relative; }
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 15px 14px;
+  transition: 0.2s;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus-visible {
+  color: var(--emas-terang);
+  border-bottom-color: var(--emas-terang);
+}
+
+.nav-menu li a .fa-chevron-down { font-size: 9px; transition: transform 0.2s; }
+.dropdown:hover li a .fa-chevron-down { transform: rotate(180deg); }
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 225px;
+  background: white;
+  list-style: none;
+  padding: 6px 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 12px 22px rgba(10, 40, 25, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: 0.2s;
+  z-index: 99;
+  border-top: 3px solid var(--emas);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a { color: var(--tinta); padding: 10px 20px; font-size: 13.5px; border-bottom: none; }
+
+.dropdown-menu li a:hover {
+  background: var(--hijau-pucat);
+  color: var(--hijau);
+  padding-left: 25px;
+}
+
+.btn-login {
+  background: var(--emas);
+  color: var(--hijau-tua) !important;
+  padding: 8px 22px !important;
+  border-radius: 25px;
+  font-weight: 700;
+  margin-left: 8px;
+  border-bottom: none !important;
+}
+
+.btn-login:hover { background: var(--emas-terang); }
+
+/* bagian content */
+
+.content {
+  padding: 35px 0 55px;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 30px;
+  align-items: start;
+}
+
+.main-content,
+.sidebar {
+  min-width: 0;
+}
+
+.hero {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--garis);
+}
+
+.hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 90px; 
+}
+
+/* bagian ppdb */
+.ppdb-banner {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--garis);
+  position: relative;
+  background: var(--hijau-pucat);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ppdb-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(10, 40, 25, 0.15);
+}
+
+.ppdb-banner img {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+/* tulisan klik */
+.ppdb-banner::after {
+  content: "Klik untuk Daftar →";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--hijau-tua);
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* bagian responsive */
+
+@media (max-width: 768px) {
+  .header .container { justify-content: center; text-align: center; }
+  .search-box { width: 100%; }
+  .search-box input { flex: 1; }
+  .nav-menu { justify-content: flex-start; overflow-x: auto; gap: 0; }
+  .contact-info { justify-content: center; width: 100%; }
+
+  .content-layout {
+    grid-template-columns: 1fr; /* jadi 1 kolom di mobile */
+  }
+
+  .sidebar {
+    position: static; /* matikan sticky di mobile */
+  }
+
+  .hero img { height: 220px; }
 }
