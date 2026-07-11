@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
 
 * {
@@ -147,12 +145,22 @@ h1, h2, h3, .logo-text h1 {
 .logo img { width: 56px; height: 56px; }
 
 .logo-text h1 { font-size: 22px; color: white; }
-.logo-text h1 span { color: var(--emas-terang); }
+.logo-text h1 span {
+  color: var(--emas-terang);
+  font-weight: 700;
+  /* disamakan dengan font span di topbar (ikut body: Inter) */
+  font-family: "Inter", "Arial", sans-serif;
+}
 .logo-text p { color: rgba(255, 255, 255, 0.85); }
 
-.search-box { display: flex; }
+/* bagian search: default hanya tombol ikon, input muncul saat tombol diklik (butuh JS toggle class "active") */
+.search-box {
+  display: flex;
+  align-items: center;
+}
 
 .search-box input {
+  display: none;
   width: 250px;
   height: 40px;
   border: 1.5px solid var(--garis);
@@ -167,14 +175,23 @@ h1, h2, h3, .logo-text h1 {
 
 .search-box input:focus { border-color: var(--hijau); }
 
+.search-box.active input {
+  display: block;
+}
+
 .search-box button {
   width: 44px;
+  height: 40px;
   border: none;
   background: var(--hijau);
   color: white;
   cursor: pointer;
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-radius: var(--radius);
   transition: background 0.2s;
+}
+
+.search-box.active button {
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .search-box button:hover { background: var(--hijau-tua); }
@@ -220,13 +237,11 @@ h1, h2, h3, .logo-text h1 {
   padding: 15px 14px;
   transition: 0.2s;
   white-space: nowrap;
-  border-bottom: 3px solid transparent;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a:focus-visible {
   color: var(--emas-terang);
-  border-bottom-color: var(--emas-terang);
 }
 
 .nav-menu li a .fa-chevron-down { font-size: 9px; transition: transform 0.2s; }
@@ -256,12 +271,19 @@ h1, h2, h3, .logo-text h1 {
   transform: translateY(0);
 }
 
-.dropdown-menu li a { color: var(--tinta); padding: 10px 20px; font-size: 13.5px; border-bottom: none; }
+.dropdown-menu li a { color: var(--tinta); padding: 10px 20px; font-size: 13.5px; }
 
 .dropdown-menu li a:hover {
   background: var(--hijau-pucat);
   color: var(--hijau);
   padding-left: 25px;
+}
+
+/* wrapper untuk search + login di sisi kanan navbar */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn-login {
@@ -270,8 +292,8 @@ h1, h2, h3, .logo-text h1 {
   padding: 8px 22px !important;
   border-radius: 25px;
   font-weight: 700;
-  margin-left: 8px;
   border-bottom: none !important;
+  text-decoration: none;
 }
 
 .btn-login:hover { background: var(--emas-terang); }
@@ -316,54 +338,7 @@ h1, h2, h3, .logo-text h1 {
   top: 90px; 
 }
 
-/* bagian ppdb */
-.ppdb-banner {
-  display: block;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--garis);
-  position: relative;
-  background: var(--hijau-pucat);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.ppdb-banner:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(10, 40, 25, 0.15);
-}
-
-.ppdb-banner img {
-  width: 100%;
-  height: auto;
-  min-height: 480px;
-  object-fit: cover;
-  display: block;
-}
-
-/* tulisan klik */
-.ppdb-banner::after {
-  content: "Klik untuk Daftar →";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--hijau-tua);
-  color: white;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 11px;
-  font-weight: 700;
-  text-align: center;
-  padding: 8px 0;
-}
-
-/* bagian berita utama + tabs */
-
-.berita-layout {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 12px;
-  margin-top: 30px;
-}
+/* section heading (dipakai di Berita Utama, dan section lain nanti) */
 
 .section-heading {
   display: flex;
@@ -387,6 +362,8 @@ h1, h2, h3, .logo-text h1 {
 
 .lihat-semua:hover { color: var(--hijau-tua); gap: 9px; }
 
+/* berita utama grid */
+
 .berita-utama-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -402,11 +379,6 @@ h1, h2, h3, .logo-text h1 {
   overflow: hidden;
   background: white;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.berita-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(10, 40, 25, 0.1);
 }
 
 .berita-card img {
@@ -441,7 +413,7 @@ h1, h2, h3, .logo-text h1 {
   font-family: "JetBrains Mono", monospace;
 }
 
-/* sidebar tabs */
+/* berita baru  Populer  hits */
 
 .berita-tabs {
   border: 1px solid var(--garis);
@@ -513,6 +485,230 @@ h1, h2, h3, .logo-text h1 {
   color: var(--abu-teks);
   font-family: "JetBrains Mono", monospace;
 }
+
+.floating-cta:hover { transform: scale(1.08); }
+
+/* informasi sekolah */
+
+.widget-info {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-lg);
+  background: white;
+  overflow: hidden;
+}
+
+.widget-info-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: var(--hijau);
+  color: white;
+  flex-shrink: 0;
+}
+
+.widget-info-header i {
+  font-size: 14px;
+  color: var(--emas-terang);
+}
+
+.widget-info-header h3 {
+  font-size: 14.5px;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.info-list {
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.info-list li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--tinta);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--garis);
+  transition: 0.2s;
+}
+
+.info-list li:last-child a { border-bottom: none; }
+
+.info-list li a:hover {
+  background: var(--hijau-pucat);
+  color: var(--hijau);
+  padding-left: 22px;
+}
+
+.info-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emas);
+  flex-shrink: 0;
+}
+
+.widget-info-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--hijau);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 0;
+  border-top: 1px solid var(--garis);
+  flex-shrink: 0;
+  transition: 0.2s;
+  background: var(--hijau-pucat);
+}
+
+.widget-info-more:hover { gap: 9px; background: #dfe9e2; }
+
+/* Bagian footer */
+.footer{
+    background:#0c4b2d;
+    color:#fff;
+    margin-top:60px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+    padding:50px 0;
+}
+
+.footer-item h3{
+    margin-bottom:18px;
+    color:#ffc107;
+    font-size:20px;
+}
+
+.footer-item p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.footer-item ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-item ul li{
+    margin-bottom:12px;
+}
+
+.footer-item a{
+    color:#ddd;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-item a:hover{
+    color:#ffc107;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.footer-logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.footer-logo h3{
+    margin:0;
+    color:#ffc107;
+    font-size:20px;
+}
+
+.footer-logo p{
+    margin:4px 0 0;
+    color:#ddd;
+    font-size:14px;
+}
+
+.footer-social{
+    display:flex;
+    gap:12px;
+}
+
+.footer-social a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#1b6d46;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:#ffc107;
+    color:#000;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    padding:20px 0;
+    color:#ddd;
+}
+
+/* cta button: up */
+
+.btn-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--hijau);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(10, 40, 25, 0.25);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.btn-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.btn-top:hover { background: var(--hijau-tua); }
 
 /* bagian responsive */
 

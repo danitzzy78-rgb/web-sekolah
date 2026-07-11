@@ -12,14 +12,3 @@
         </div>
     </div>
 </header>
-
-<script>
-  const headerImages = [
-    "<?= base_url('assets/images/hero_header/header1.jpg') ?>",
-    "<?= base_url('assets/images/hero_header/header2.jpg') ?>",
-    "<?= base_url('assets/images/hero_header/header3.jpg') ?>",
-  ];
-
-  const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
-  document.getElementById('header-bg').src = randomImage;
-</script>
