@@ -15,7 +15,7 @@
       <aside class="sidebar">
       
         <a href="<?= base_url('ppdb/daftar') ?>" class="ppdb-banner">
-          <img src="<?= base_url('assets/images/banner_ppb/banner-ppdb.jpg') ?>" alt="Pendaftaran PPDB 2026/2027">
+          <img src="<?= base_url('assets/images/banner_ppb/ppdb.jpg') ?>" alt="Pendaftaran PPDB 2026/2027">
         </a>
       </aside>
 

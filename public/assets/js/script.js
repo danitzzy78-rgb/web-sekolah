@@ -18,3 +18,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// berita utama +Tabs
