@@ -8,7 +8,8 @@
         </div>
 
         <ul class="info-list">
-            <?php // foreach ($informasi as $i): ?>
+            <?php // foreach ($informasi as $i): 
+            ?>
             <li>
                 <a href="#">
                     <span class="info-dot"></span>
@@ -45,7 +46,8 @@
                     Kelulusan
                 </a>
             </li>
-            <?php // endforeach; ?>
+            <?php // endforeach; 
+            ?>
         </ul>
 
         <a href="<?= base_url('pengumuman') ?>" class="widget-info-more">
@@ -62,20 +64,88 @@
         </div>
 
         <div class="tab-content active" id="terbaru">
-            <?php // foreach ($berita_terbaru as $b): ?>
+            <?php // foreach ($berita_terbaru as $b): 
+            ?>
             <a href="#" class="tab-item">
                 <span class="tab-item-title">Judul berita terbaru</span>
                 <span class="tab-item-date">10 Juli 2026</span>
             </a>
-            <?php // endforeach; ?>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Workshop Digital Marketing Bersama Praktisi Industri</span>
+                <span class="tab-item-date">14 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Pelaksanaan MPLS Berjalan Lancar dan Meriah</span>
+                <span class="tab-item-date">13 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Siswa Tata Boga Mengikuti Pelatihan Barista</span>
+                <span class="tab-item-date">12 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Jadwal Pembagian Rapor Semester Genap</span>
+                <span class="tab-item-date">11 Juli 2026</span>
+            </a>
+            <?php // endforeach; 
+            ?>
         </div>
 
         <div class="tab-content" id="populer">
-            <!-- list berita populer -->
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">SMK Attaufiqiyyah Raih Juara Umum LKS Tingkat Kabupaten</span>
+                <span class="tab-item-date">10 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Tim Barista Menjadi Juara 1 Kompetisi Nasional</span>
+                <span class="tab-item-date">8 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">10 Alumni Diterima Bekerja Sebelum Lulus</span>
+                <span class="tab-item-date">6 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Peresmian Laboratorium Komputer Baru</span>
+                <span class="tab-item-date">5 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Kunjungan Industri ke Perusahaan Teknologi Nasional</span>
+                <span class="tab-item-date">3 Juli 2026</span>
+            </a>
         </div>
 
         <div class="tab-content" id="hits">
-            <!-- list berita hits -->
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">5 Alasan Memilih Jurusan Rekayasa Perangkat Lunak</span>
+                <span class="tab-item-date">9 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Mengenal Fasilitas Modern di SMK Attaufiqiyyah</span>
+                <span class="tab-item-date">7 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Ekstrakurikuler Favorit yang Banyak Diminati Siswa</span>
+                <span class="tab-item-date">5 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Tips Sukses Mengikuti Seleksi PPDB</span>
+                <span class="tab-item-date">4 Juli 2026</span>
+            </a>
+
+            <a href="#" class="tab-item">
+                <span class="tab-item-title">Suasana Belajar Praktik di Jurusan Tata Boga</span>
+                <span class="tab-item-date">2 Juli 2026</span>
+            </a>
         </div>
     </div>
 
