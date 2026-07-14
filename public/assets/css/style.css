@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
-
 /* =========================================================
    RESET & BASE
    ========================================================= */
@@ -34,7 +32,10 @@ body {
   line-height: 1.55;
 }
 
-h1, h2, h3, .logo-text h1 {
+h1,
+h2,
+h3,
+.logo-text h1 {
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -46,7 +47,6 @@ h1, h2, h3, .logo-text h1 {
   margin: auto;
   padding: 0 12px;
 }
-
 
 /* =========================================================
    TOPBAR
@@ -112,11 +112,18 @@ h1, h2, h3, .logo-text h1 {
   transform: translateY(-2px);
 }
 
-.sosial-media a:nth-child(1) { background: #1877f2; }
-.sosial-media a:nth-child(2) { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-.sosial-media a:nth-child(3) { background: #000; }
-.sosial-media a:nth-child(4) { background: #ff0000; }
-
+.sosial-media a:nth-child(1) {
+  background: #1877f2;
+}
+.sosial-media a:nth-child(2) {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+}
+.sosial-media a:nth-child(3) {
+  background: #000;
+}
+.sosial-media a:nth-child(4) {
+  background: #ff0000;
+}
 
 /* =========================================================
    HEADER
@@ -230,7 +237,6 @@ h1, h2, h3, .logo-text h1 {
 .search-box button:hover {
   background: var(--hijau-tua);
 }
-
 
 /* =========================================================
    NAVBAR
@@ -349,7 +355,6 @@ h1, h2, h3, .logo-text h1 {
   background: var(--emas-terang);
 }
 
-
 /* =========================================================
    CONTENT — LAYOUT UTAMA
    ========================================================= */
@@ -418,7 +423,6 @@ h1, h2, h3, .logo-text h1 {
   gap: 9px;
 }
 
-
 /* =========================================================
    BERITA UTAMA (grid kartu)
    ========================================================= */
@@ -436,7 +440,9 @@ h1, h2, h3, .logo-text h1 {
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: white;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .berita-card img {
@@ -472,7 +478,6 @@ h1, h2, h3, .logo-text h1 {
   color: var(--abu-teks);
   font-family: "JetBrains Mono", monospace;
 }
-
 
 /* =========================================================
    WIDGET TAB BERITA (Terbaru / Populer / Hits)
@@ -554,7 +559,6 @@ h1, h2, h3, .logo-text h1 {
   font-family: "JetBrains Mono", monospace;
 }
 
-
 /* =========================================================
    WIDGET INFORMASI SEKOLAH / AGENDA (bentuk umum widget-info)
    ========================================================= */
@@ -567,10 +571,11 @@ h1, h2, h3, .logo-text h1 {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-} 
+}
 
-.widget-info,
-.widget-agenda { height: 420px; }
+.widget-agenda {
+  height: 420px;
+}
 
 .widget-info {
   height: 420px;
@@ -662,15 +667,14 @@ h1, h2, h3, .logo-text h1 {
   background: #dfe9e2;
 }
 
-
 /* =========================================================
    SECTION SPLIT (2 kolom: konten utama + widget kanan)
    ========================================================= */
 .section-split {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 20px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
 }
 
 /* =========================================================
@@ -733,7 +737,7 @@ h1, h2, h3, .logo-text h1 {
    ========================================================= */
 .agenda-list {
   list-style: none;
-  padding: 8px 0; 
+  padding: 8px 0;
   overflow-y: auto;
   flex: 1;
 }
@@ -792,30 +796,29 @@ h1, h2, h3, .logo-text h1 {
   color: var(--abu-teks);
 }
 
-
 /* =========================================================
    GALERI KEGIATAN
    ========================================================= */
-.galeri-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
-.galeri-item{
-    width:100%;
-    height:220px;
-    overflow:hidden;
-    border-radius:12px;
-    position:relative;
+.galeri-item {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
 }
 
-.galeri-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:.3s;
+.galeri-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s;
 }
 
 .galeri-item::after {
@@ -834,44 +837,89 @@ h1, h2, h3, .logo-text h1 {
 /* =========================================================
    PRESTASI SEKOLAH
    ========================================================= */
-.prestasi-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.prestasi-section {
+  margin-top: 40px;
 }
 
-.prestasi-item {
-  display: flex;
-  gap: 14px;
+.prestasi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.prestasi-card {
   background: white;
   border: 1px solid var(--garis);
   border-radius: var(--radius-lg);
-  padding: 14px 16px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.prestasi-icon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 50%;
+.prestasi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(10, 40, 25, 0.12);
+}
+
+.prestasi-card-img {
+  position: relative;
+  height: 170px;
+}
+
+.prestasi-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.prestasi-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
   background: var(--emas);
   color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.prestasi-card-icon {
+  position: absolute;
+  bottom: -18px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--hijau);
+  color: var(--emas-terang);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 17px;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(10, 40, 25, 0.2);
 }
 
-.prestasi-item h4 {
-  font-size: 14px;
-  margin-bottom: 3px;
+.prestasi-card-body {
+  padding: 26px 16px 16px;
 }
 
-.prestasi-item p {
+.prestasi-card-body h4 {
+  font-size: 14.5px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.prestasi-card-body p {
   font-size: 12.5px;
   color: var(--abu-teks);
+  font-family: "JetBrains Mono", monospace;
 }
-
 
 /* =========================================================
    WIDGET EKSTRAKURIKULER
@@ -883,9 +931,12 @@ h1, h2, h3, .logo-text h1 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 420px;
 }
 
 .widget-ekskul .ekskul-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 16px;
   gap: 10px;
 }
@@ -924,41 +975,164 @@ h1, h2, h3, .logo-text h1 {
    ========================================================= */
 .partner-section {
   margin-top: 40px;
-  text-align: center;
 }
 
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
+.partner-marquee {
+  overflow: hidden;
+  position: relative;
   margin-top: 20px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
 }
 
-.partner-logo {
+.partner-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: partner-scroll 28s linear infinite;
+}
+
+.partner-marquee:hover .partner-track {
+  animation-play-state: paused;
+}
+
+.partner-block {
+  flex-shrink: 0;
+  width: 380px; /* sebelumnya 260px */
+  height: 220px; /* sebelumnya 160px */
   background: white;
   border: 1px solid var(--garis);
   border-radius: var(--radius-lg);
-  padding: 16px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  filter: grayscale(100%);
-  opacity: 0.7;
+  gap: 18px;
+  padding: 28px;
   transition: 0.2s;
 }
 
-.partner-logo:hover {
+.partner-block:hover {
+  border-color: var(--emas);
+  box-shadow: 0 10px 22px rgba(10, 40, 25, 0.1);
+}
+
+.partner-block img {
+  max-width: 100%;
+  max-height: 100px; /* sebelumnya 70px */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.partner-block:hover img {
   filter: none;
   opacity: 1;
 }
 
-.partner-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.partner-block span {
+  font-size: 14.5px; /* sebelumnya 12.5px */
+  font-weight: 600;
+  color: var(--abu-teks);
+  text-align: center;
 }
 
+.partner-info-marquee {
+  overflow: hidden;
+  position: relative;
+  margin-top: 24px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.partner-info-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: partner-scroll-right 32s linear infinite;
+}
+
+.partner-info-marquee:hover .partner-info-track {
+  animation-play-state: paused;
+}
+
+.partner-info-card {
+  flex-shrink: 0;
+  width: 460px;
+  background: white;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none; /* ⬅️ tambahkan, hilangkan garis bawah link */
+  color: var(
+    --tinta
+  ); /* ⬅️ tambahkan, warna teks ikut tema, bukan biru default link */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.partner-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(10, 40, 25, 0.12);
+}
+
+.partner-info-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.partner-info-body {
+  padding: 20px 22px;
+}
+
+.partner-info-body h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.partner-info-body p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--abu-teks);
+}
+
+@keyframes partner-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 
 /* =========================================================
    PETA LOKASI & KONTAK CEPAT
@@ -970,14 +1144,16 @@ h1, h2, h3, .logo-text h1 {
 .lokasi-split {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
+  gap: 0;
+  border: 1px solid var(--hijau-tua);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--hijau);
 }
 
 .lokasi-map {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--garis);
   min-height: 320px;
+  /* border & radius dihapus, sudah diambil alih oleh .lokasi-split */
 }
 
 .lokasi-map iframe {
@@ -989,9 +1165,8 @@ h1, h2, h3, .logo-text h1 {
 }
 
 .kontak-cepat {
-  background: white;
-  border: 1px solid var(--garis);
-  border-radius: var(--radius-lg);
+  background: var(--hijau);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
   padding: 22px;
   display: flex;
   flex-direction: column;
@@ -1014,11 +1189,14 @@ h1, h2, h3, .logo-text h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--emas-terang);
 }
 
 .kontak-item h4 {
   font-size: 13.5px;
   margin-bottom: 3px;
+  color: white;
 }
 
 .kontak-item p,
@@ -1026,6 +1204,7 @@ h1, h2, h3, .logo-text h1 {
   font-size: 12.5px;
   color: var(--abu-teks);
   text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .btn-wa-cepat {
@@ -1048,7 +1227,6 @@ h1, h2, h3, .logo-text h1 {
 .btn-wa-cepat:hover {
   background: #1ebe5b;
 }
-
 
 /* =========================================================
    FOOTER
@@ -1150,7 +1328,6 @@ h1, h2, h3, .logo-text h1 {
   color: #ddd;
 }
 
-
 /* =========================================================
    TOMBOL KE ATAS (floating)
    ========================================================= */
@@ -1186,7 +1363,6 @@ h1, h2, h3, .logo-text h1 {
 .btn-top:hover {
   background: var(--hijau-tua);
 }
-
 
 /* =========================================================
    RESPONSIVE

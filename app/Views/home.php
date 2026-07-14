@@ -209,6 +209,22 @@
                         <i class="fa-solid fa-book-quran" aria-hidden="true"></i>
                         <span>Tahfidz</span>
                     </a>
+                    <a href="#" class="ekskul-item">
+                        <i class="fa-solid fa-basketball" aria-hidden="true"></i>
+                        <span>Basket</span>
+                    </a>
+                    <a href="#" class="ekskul-item">
+                        <i class="fa-solid fa-drum" aria-hidden="true"></i>
+                        <span>Marching Band</span>
+                    </a>
+                    <a href="#" class="ekskul-item">
+                        <i class="fa-solid fa-palette" aria-hidden="true"></i>
+                        <span>Seni Rupa</span>
+                    </a>
+                    <a href="#" class="ekskul-item">
+                        <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                        <span>Robotik</span>
+                    </a>
                     <?php // endforeach; ?>
                 </div>
                 <a href="<?= base_url('ekstrakurikuler') ?>" class="widget-info-more">
@@ -216,40 +232,63 @@
                 </a>
             </div>
         </div>
-
+        <!-- ⬆️ .section-split (Galeri | Ekskul) DITUTUP DI SINI -->
 
         <!-- ============================= -->
-        <!-- Prestasi Sekolah | r -->
+        <!-- Prestasi Sekolah -->
         <!-- ============================= -->
-        <div class="section-split">
-            <div>
-                <div class="section-heading">
-                    <h2>Prestasi Sekolah</h2>
-                    <a href="<?= base_url('prestasi') ?>" class="lihat-semua">
-                        Lihat Semua <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="prestasi-list">
-                    <?php // foreach ($prestasi as $p): ?>
-                    <div class="prestasi-item">
-                        <div class="prestasi-icon"><i class="fa-solid fa-trophy"></i></div>
-                        <div>
-                            <h4>Juara 1 Lomba Barista Tingkat Provinsi</h4>
-                            <p>Tim Tata Boga - Juli 2026</p>
-                        </div>
-                    </div>
-                    <div class="prestasi-item">
-                        <div class="prestasi-icon"><i class="fa-solid fa-trophy"></i></div>
-                        <div>
-                            <h4>Juara 2 LKS Rekayasa Perangkat Lunak</h4>
-                            <p>Tim RPL - Juni 2026</p>
-                        </div>
-                    </div>
-                    <?php // endforeach; ?>
-                </div>
+        <div class="prestasi-section">
+            <div class="section-heading">
+                <h2>Prestasi Sekolah</h2>
+                <a href="<?= base_url('prestasi') ?>" class="lihat-semua">
+                    Lihat Semua <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
 
+            <div class="prestasi-grid">
+                <?php // foreach ($prestasi as $p): ?>
+                <div class="prestasi-card">
+                    <div class="prestasi-card-img">
+                        <img src="<?= base_url('assets/images/prestasi/1.jpg') ?>"
+                            alt="Juara 1 Lomba Barista Tingkat Provinsi">
+                        <span class="prestasi-badge">Provinsi</span>
+                        <div class="prestasi-card-icon"><i class="fa-solid fa-trophy"></i></div>
+                    </div>
+                    <div class="prestasi-card-body">
+                        <h4>Juara 1 Lomba Barista Tingkat Provinsi</h4>
+                        <p>Tim Tata Boga &middot; Juli 2026</p>
+                    </div>
+                </div>
+
+                <div class="prestasi-card">
+                    <div class="prestasi-card-img">
+                        <img src="<?= base_url('assets/images/prestasi/2.jpg') ?>"
+                            alt="Juara 2 LKS Rekayasa Perangkat Lunak">
+                        <span class="prestasi-badge">Nasional</span>
+                        <div class="prestasi-card-icon"><i class="fa-solid fa-trophy"></i></div>
+                    </div>
+                    <div class="prestasi-card-body">
+                        <h4>Juara 2 LKS Rekayasa Perangkat Lunak</h4>
+                        <p>Tim RPL &middot; Juni 2026</p>
+                    </div>
+                </div>
+
+                <div class="prestasi-card">
+                    <div class="prestasi-card-img">
+                        <img src="<?= base_url('assets/images/prestasi/3.jpg') ?>"
+                            alt="Juara 1 Lomba Debat Bahasa Inggris">
+                        <span class="prestasi-badge">Kabupaten</span>
+                        <div class="prestasi-card-icon"><i class="fa-solid fa-trophy"></i></div>
+                    </div>
+                    <div class="prestasi-card-body">
+                        <h4>Juara 1 Lomba Debat Bahasa Inggris</h4>
+                        <p>Tim Bahasa &middot; Mei 2026</p>
+                    </div>
+                </div>
+                <?php // endforeach; ?>
+            </div>
         </div>
+
         <!-- ============================= -->
         <!-- Partner Industri -->
         <!-- ============================= -->
@@ -260,15 +299,103 @@
                     Lihat Semua <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="partner-grid">
-                <?php // foreach ($partner as $p): ?>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/1.png') ?>" alt=""></div>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/2.png') ?>" alt=""></div>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/3.png') ?>" alt=""></div>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/4.png') ?>" alt=""></div>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/5.png') ?>" alt=""></div>
-                <div class="partner-logo"><img src="<?= base_url('assets/images/partner/6.png') ?>" alt=""></div>
-                <?php // endforeach; ?>
+
+            <div class="partner-info-marquee">
+                <div class="partner-info-track">
+                    <?php // foreach ($partner as $p): ?>
+                    <a href="<?= base_url('partner/detail/pt-mitra-industri-satu') ?>" class="partner-info-card">
+                        <img src="<?= base_url('assets/images/partner/foto-1.jpg') ?>" alt="PT Mitra Industri Satu">
+                        <div class="partner-info-body">
+                            <h4>PT Mitra Industri Satu</h4>
+                            <p>Perusahaan manufaktur elektronik yang menjadi mitra magang siswa jurusan RPL dan TKJ
+                                sejak 2021.</p>
+                        </div>
+                    </a>
+
+                    <a href="<?= base_url('partner/detail/cv-karya-teknologi') ?>" class="partner-info-card">
+                        <img src="<?= base_url('assets/images/partner/foto-2.jpg') ?>" alt="CV Karya Teknologi">
+                        <div class="partner-info-body">
+                            <h4>CV Karya Teknologi</h4>
+                            <p>Bergerak di bidang jasa perbaikan komputer dan jaringan, rutin menerima siswa PKL setiap
+                                semester.</p>
+                        </div>
+                    </a>
+
+                    <a href="<?= base_url('partner/detail/pt-boga-sejahtera') ?>" class="partner-info-card">
+                        <img src="<?= base_url('assets/images/partner/foto-3.jpg') ?>" alt="PT Boga Sejahtera">
+                        <div class="partner-info-body">
+                            <h4>PT Boga Sejahtera</h4>
+                            <p>Industri kuliner skala menengah, tempat praktik kerja lapangan bagi siswa jurusan Tata
+                                Boga.</p>
+                        </div>
+                    </a>
+
+                    <a href="<?= base_url('partner/detail/pt-digital-nusantara') ?>" class="partner-info-card">
+                        <img src="<?= base_url('assets/images/partner/foto-4.jpg') ?>" alt="PT Digital Nusantara">
+                        <div class="partner-info-body">
+                            <h4>PT Digital Nusantara</h4>
+                            <p>Perusahaan pengembangan aplikasi yang membuka program magang berbayar untuk siswa RPL.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="<?= base_url('partner/detail/cv-mandiri-perkasa') ?>" class="partner-info-card">
+                        <img src="<?= base_url('assets/images/partner/foto-5.jpg') ?>" alt="CV Mandiri Perkasa">
+                        <div class="partner-info-body">
+                            <h4>CV Mandiri Perkasa</h4>
+                            <p>Bergerak di bidang otomotif, menjadi tempat pelatihan kerja siswa jurusan Teknik
+                                Kendaraan.</p>
+                        </div>
+                    </a>
+
+                    <!-- duplikat set, untuk loop mulus -->
+                    <a href="<?= base_url('partner/detail/pt-mitra-industri-satu') ?>" class="partner-info-card"
+                        aria-hidden="true" tabindex="-1">
+                        <img src="<?= base_url('assets/images/partner/foto-1.jpg') ?>" alt="">
+                        <div class="partner-info-body">
+                            <h4>PT Mitra Industri Satu</h4>
+                            <p>Perusahaan manufaktur elektronik yang menjadi mitra magang siswa jurusan RPL dan TKJ
+                                sejak 2021.</p>
+                        </div>
+                    </a>
+                    <a href="<?= base_url('partner/detail/cv-karya-teknologi') ?>" class="partner-info-card"
+                        aria-hidden="true" tabindex="-1">
+                        <img src="<?= base_url('assets/images/partner/foto-2.jpg') ?>" alt="">
+                        <div class="partner-info-body">
+                            <h4>CV Karya Teknologi</h4>
+                            <p>Bergerak di bidang jasa perbaikan komputer dan jaringan, rutin menerima siswa PKL setiap
+                                semester.</p>
+                        </div>
+                    </a>
+                    <a href="<?= base_url('partner/detail/pt-boga-sejahtera') ?>" class="partner-info-card"
+                        aria-hidden="true" tabindex="-1">
+                        <img src="<?= base_url('assets/images/partner/foto-3.jpg') ?>" alt="">
+                        <div class="partner-info-body">
+                            <h4>PT Boga Sejahtera</h4>
+                            <p>Industri kuliner skala menengah, tempat praktik kerja lapangan bagi siswa jurusan Tata
+                                Boga.</p>
+                        </div>
+                    </a>
+                    <a href="<?= base_url('partner/detail/pt-digital-nusantara') ?>" class="partner-info-card"
+                        aria-hidden="true" tabindex="-1">
+                        <img src="<?= base_url('assets/images/partner/foto-4.jpg') ?>" alt="">
+                        <div class="partner-info-body">
+                            <h4>PT Digital Nusantara</h4>
+                            <p>Perusahaan pengembangan aplikasi yang membuka program magang berbayar untuk siswa RPL.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="<?= base_url('partner/detail/cv-mandiri-perkasa') ?>" class="partner-info-card"
+                        aria-hidden="true" tabindex="-1">
+                        <img src="<?= base_url('assets/images/partner/foto-5.jpg') ?>" alt="">
+                        <div class="partner-info-body">
+                            <h4>CV Mandiri Perkasa</h4>
+                            <p>Bergerak di bidang otomotif, menjadi tempat pelatihan kerja siswa jurusan Teknik
+                                Kendaraan.</p>
+                        </div>
+                    </a>
+                    <?php // endforeach; ?>
+                </div>
             </div>
         </div>
 
@@ -282,7 +409,7 @@
             <div class="lokasi-split">
                 <div class="lokasi-map">
                     <iframe src="https://www.google.com/maps?q=SMK+Attaufiqiyyah&output=embed" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi SMK Attaufiqiyyah">
                     </iframe>
                 </div>
                 <div class="kontak-cepat">
